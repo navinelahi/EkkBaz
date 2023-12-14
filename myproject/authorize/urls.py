@@ -1,5 +1,5 @@
 from django.urls import re_path as url
-from auth_api import views
+from . import views
 
 urlpatterns = [
     url(r'^api/register$', views.user_register),

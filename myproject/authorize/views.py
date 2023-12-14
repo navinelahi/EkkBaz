@@ -44,4 +44,3 @@ def user_login(request):
         }, status=status.HTTP_200_OK)
     else:
         return Response({'error': 'Invalid username or password'}, status=status.HTTP_401_UNAUTHORIZED)
-
