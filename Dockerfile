@@ -3,7 +3,7 @@ FROM python:3.10-slim-buster
 
 # Set environment variables
 ENV PYTHONUNBUFFERED 1
-ENV DJANGO_SETTINGS_MODULE ekkbaz_containers.settings
+# ENV DJANGO_SETTINGS_MODULE ekkbaz_containers.settings
 
 # Create and set the working directory
 WORKDIR /app
