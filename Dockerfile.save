@@ -25,8 +25,5 @@ EXPOSE 8001
 ENV PYTHONUNBUFFERED 1
 
 # Start the Django application
-CMD ["python", "myproject_original/manage.py", "makemigrations", "authorize"]
-CMD ["python", "myproject_original/manage.py", "migrate", "authorize"]
 CMD ["python", "myproject_original/manage.py", "makemigrations", "business"]
-CMD ["python", "myproject_original/manage.py", "migrate", "business"]
 CMD ["python", "myproject_original/manage.py", "runserver", "0.0.0.0:8001"]
