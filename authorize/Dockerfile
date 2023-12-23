@@ -14,10 +14,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone the specific branch of your repository from GitHub
-RUN git clone -b ci_cd_draft4 https://github.com/navinelahi/EkkBaz.git .
+RUN git clone -b cicd5 https://github.com/navinelahi/EkkBaz.git .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN cd authorize && pip install --no-cache-dir -r requirements.txt
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8080
