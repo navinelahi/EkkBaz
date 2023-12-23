@@ -14,13 +14,13 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone the specific branch of your repository from GitHub
-RUN git clone -b fix1 https://github.com/navinelahi/EkkBaz.git .
+RUN git clone -b ci_cd_draft4 https://github.com/navinelahi/EkkBaz.git .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 8000 available to the world outside this container
-EXPOSE 8001
+EXPOSE 8080
 
 # Define environment variable
 ENV PYTHONUNBUFFERED 1
@@ -30,4 +30,4 @@ CMD ["python", "myproject_original/manage.py", "makemigrations", "authorize"]
 CMD ["python", "myproject_original/manage.py", "migrate", "authorize"]
 CMD ["python", "myproject_original/manage.py", "makemigrations", "business"]
 CMD ["python", "myproject_original/manage.py", "migrate", "business"]
-CMD ["python", "myproject_original/manage.py", "runserver", "0.0.0.0:8001"]
+CMD ["python", "myproject_original/manage.py", "runserver", "0.0.0.0:8080"]
