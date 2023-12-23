@@ -37,7 +37,7 @@ def find_nearby_business(request):
         latitude = float(request.data.get('latitude'))
         longitude = float(request.data.get('longitude'))
         # user_location = Point(longitude, latitude, srid=4326)
-        user_location = fromstr(f'POINT({longitude} {longitude})', srid=4326)
+        user_location = fromstr(f'POINT({latitude} {longitude})', srid=4326)
         print("User Location:", user_location)
 
         businesses = Business.objects.annotate(
