@@ -14,10 +14,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone the specific branch of your repository from GitHub
-RUN git clone -b ci_cd_draft4 https://github.com/navinelahi/EkkBaz.git .
+RUN git clone -b cicd5 https://github.com/navinelahi/EkkBaz.git .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN cd business && pip install --no-cache-dir -r requirements.txt
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8081
@@ -26,8 +26,8 @@ EXPOSE 8081
 ENV PYTHONUNBUFFERED 1
 
 # Start the Django application
-CMD ["python", "myproject_original/manage.py", "makemigrations", "authorize"]
-CMD ["python", "myproject_original/manage.py", "migrate", "authorize"]
-CMD ["python", "myproject_original/manage.py", "makemigrations", "business"]
-CMD ["python", "myproject_original/manage.py", "migrate", "business"]
-CMD ["python", "myproject_original/manage.py", "runserver", "0.0.0.0:8081"]
+CMD ["python", "business/myproject_original/manage.py", "makemigrations", "authorize"]
+CMD ["python", "business/myproject_original/manage.py", "migrate", "authorize"]
+CMD ["python", "business/myproject_original/manage.py", "makemigrations", "business"]
+CMD ["python", "business/myproject_original/manage.py", "migrate", "business"]
+CMD ["python", "business/myproject_original/manage.py", "runserver", "0.0.0.0:8081"]
