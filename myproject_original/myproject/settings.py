@@ -27,14 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 
-ALLOWED_HOSTS = [
-    '0.0.0.0',
-    'localhost',
-    '127.0.0.1',
-    '54.157.238.14',
-    '172.31.18.16',
-    '*',
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
