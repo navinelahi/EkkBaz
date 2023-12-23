@@ -26,8 +26,8 @@ EXPOSE 8080
 ENV PYTHONUNBUFFERED 1
 
 # Start the Django application
-CMD ["python", "myproject_original/manage.py", "makemigrations", "authorize"]
-CMD ["python", "myproject_original/manage.py", "migrate", "authorize"]
-CMD ["python", "myproject_original/manage.py", "makemigrations", "business"]
-CMD ["python", "myproject_original/manage.py", "migrate", "business"]
-CMD ["python", "myproject_original/manage.py", "runserver", "0.0.0.0:8080"]
+CMD ["python", "authorize/myproject_original/manage.py", "makemigrations", "authorize"]
+CMD ["python", "authorize/myproject_original/manage.py", "migrate", "authorize"]
+CMD ["python", "authorize/myproject_original/manage.py", "makemigrations", "business"]
+CMD ["python", "authorize/myproject_original/manage.py", "migrate", "business"]
+CMD ["python", "authorize/myproject_original/manage.py", "runserver", "0.0.0.0:8080"]
