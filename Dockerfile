@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone the specific branch of your repository from GitHub
-RUN git clone -b branch5_ec2_working https://github.com/navinelahi/EkkBaz.git .
+RUN git clone -b fix1 https://github.com/navinelahi/EkkBaz.git .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
